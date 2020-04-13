@@ -9,5 +9,5 @@ class Settings:
         self.screen_height = 540
         self.bg_color = (230, 230, 230)
 
-        self.ship_size = (60,48)
+        self.ship_size = (65,52)
         self.ship_speed = 1.5
