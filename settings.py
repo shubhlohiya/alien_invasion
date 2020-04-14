@@ -12,6 +12,7 @@ class Settings:
         #Ship settings
         self.ship_size = (55,50)
         self.ship_speed = 2
+        self.ship_limit = 2 # 2 extra ships ie. total 3 ships
 
         #Bullet settings
         self.bullet_speed = 1.5
