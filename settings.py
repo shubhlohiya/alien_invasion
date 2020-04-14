@@ -11,7 +11,7 @@ class Settings:
 
         #Ship settings
         self.ship_size = (55,50)
-        self.ship_speed = 1.5
+        self.ship_speed = 1.8
 
         #Bullet settings
         self.bullet_speed = 1.0
@@ -22,5 +22,7 @@ class Settings:
 
         #Alien settings
         self.alien_size = (39, 50)  #(50, 64)
-        
+        self.alien_speed = 0.5
+        self.fleet_drop_speed = 10        
+        self.fleet_direction = 1 # 1 - right / -1 - left.
 
