@@ -70,7 +70,9 @@ class AlienInvasion:
     def _check_play_button(self, mouse_pos):
         """Start a new game when player clicks Play"""
         if self.play_button.rect.collidepoint(mouse_pos) and not self.stats.game_active:
-            self.stats.reset_stats() #Reset the game stats
+            #Reset the game stats and settings
+            self.settings.initialize_dynamic_settings()
+            self.stats.reset_stats() 
             self.stats.game_active = True
 
             self.aliens.empty()
@@ -89,7 +91,7 @@ class AlienInvasion:
             self.ship.moving_right = True
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
-        elif event.key == pygame.K_q:
+        elif event.key == pygame.K_q or event.key == pygame.K_ESCAPE:
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
@@ -127,6 +129,7 @@ class AlienInvasion:
         if not self.aliens:
             self.bullets.empty()
             self._create_fleet()
+            self.settings.increase_speed()
 
     def _update_aliens(self):
         """Update the positions of all the aliens in the fleet"""
